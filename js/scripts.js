@@ -81,7 +81,18 @@ function store(){
         window.open("login.html");
     }
 }
-
+//Logout
+function changepw(){
+  var oldpw = document.getElementById('oldpw');
+  var newpw = document.getElementById('newpw');
+  var curpw= localStorage.getItem('password');
+  if(oldpw==curpw){
+    localStorage.setItem('password', newpw.value);
+    alert("Success!Password was changed");
+  }else{
+    alert("Failed! Youve entered an incorrect current password. Please try again")
+  }
+}
 //checking
 function check(){
 
