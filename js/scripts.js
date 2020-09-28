@@ -78,6 +78,7 @@ function store(){
         });
 
         alert('Your account has been created');
+        window.close("register.html");
         window.open("login.html");
     }
 }
