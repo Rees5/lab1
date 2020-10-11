@@ -20,7 +20,7 @@
         echo $user->register($pdo);
     }else {
         //login
-        $user_email = $_POST['username'];
+        $user_email = $_POST['email'];
         $user_password = $_POST['password'];
         $user = new User($user_email, $user_password);
         echo $user->login($pdo);

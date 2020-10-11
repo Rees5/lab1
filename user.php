@@ -62,7 +62,7 @@
                 if($row == null){
                 	return "Account does not exist";
                 }
-                if (password_verify($this->password,$row['user_password'])){
+                if (password_verify($this->user_password,$row['user_password'])){
                 	return "Success";
                 }
                 return "Your username or password is not correct";
