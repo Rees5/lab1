@@ -11,7 +11,7 @@
     <div class="background-wrap">
       <div class="background"></div>
     </div>
-    <form id="accesspanel" enctype="multipart/form-data" method="post" action="contoller.php">
+    <form id="accesspanel" enctype="multipart/form-data" method="post" action="controller.php">
       <h1 id="litheader">Register</h1>
       <div class="inset">
         <p>
@@ -36,10 +36,10 @@
         <input class="loginLoginValue" type="hidden" name="service" value="register" />
       </div>
       <p class="p-container">
-        <button type="button" name="button" onclick="store()">Register</button>
+        <button type="submit" name="event" value="register">Register</button>
         <p name="Login" id="go" value="Register"></p>
       </p>
-      <p class="p-container">Registered? Login <a href="login.html">here</a></p>
+      <p class="p-container">Registered? Login <a href="login.php">here</a></p>
     </form>
   </body>
 </html>

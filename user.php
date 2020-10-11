@@ -13,19 +13,22 @@
     protected $user_city;
     protected $user_image;
     protected $user_password;
-    function __construct($user_name,$user_email,$user_city,$user_image,$user_password)
-    {
-      $this->$user_name=$user_name;
-      $this->$user_email=$user_email;
-      $this->$user_city=$user_city;
-      $this->$user_image=$user_image;
-      $this->$user_password=$user_password;
-    }
 
+    //default constructor
     function __construct($user_email,$user_password)
     {
        $this->$user_email=$user_email;
        $this->$user_password=$user_password;
+    }
+    //setters
+    function setCity($user_city){
+      $this->$user_city=$user_city;
+    }
+    function setName($user_name){
+        $this->$user_name=$user_name;
+    }
+    function setImage($user_image){
+      $this->$user_image=$user_image;
     }
     public function register ($pdo){
       //hash password
@@ -47,7 +50,7 @@
             return $e->getMessage();
           }
         } else{
-          return "Image not uploaded. Try again"
+          return "Image not uploaded. Try again";
         }
 
     }

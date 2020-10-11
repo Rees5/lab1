@@ -11,7 +11,7 @@
       <div class="background"></div>
     </div>
 
-    <form id="accesspanel" method="post" action="contoller.php">
+    <form id="accesspanel" method="post" action="controller.php">
       <h1 id="litheader">Login</h1>
       <div class="inset">
         <p>
@@ -31,7 +31,7 @@
       </div>
 
       <p class="p-container">
-        <input type="submit" name="Login" id="go" value="Login" onclick="check()"><br>
+        <input type="submit" name="event" id="go" value="login"><br>
 
       </p>
       <p class="p-container">New? Register <a href="register.php">here</a></p>

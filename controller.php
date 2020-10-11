@@ -13,7 +13,10 @@
         $password = $_POST['password'];
         $user_city = $_POST['city'];
         $image=$_FILES['photo'];
-        $user = new User($user_name,$user_email,$user_city,$user_image,$user_password);
+        $user = new User(,$user_email, $user_password);
+        $user->setImage($user_image);
+        $user->setName($user_name);
+        $user->setCity($user_city);
         echo $user->register($pdo);
     }else {
         //login
