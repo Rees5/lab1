@@ -57,7 +57,7 @@ button {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 85%;
   font-size: 18px;
 }
 
@@ -75,9 +75,9 @@ button:hover, a:hover {
     <script type="text/javascript" src="js/scripts.js"></script>
   </head>
   <body>
-    <h2 style="text-align:center">Profile</h2>
+    <h2 style="text-align:left;margin-left:12px;">Profile</h2>
 
-<div class="card">
+<div style="float:left;margin-left:12px;" class="card">
   <img src="assets/<?php echo $_SESSION['user_image']; ?>" alt="profile" style="width:100%">
   <h1><?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name'];} ?></h1>
   <p class="title"><?php if(isset($_SESSION['user_email'])){ echo $_SESSION['user_email'];} ?></p>
@@ -91,12 +91,12 @@ button:hover, a:hover {
   <p><a href="logout.php" onclick="confirm('Are you sure you want to logout?')"><button type="button" name="button">Sign Out</button></a></p>
 </div>
 
-  <div class="card">
+  <div style="float:left;margin-left:12px;" class="card">
     <hr>
     <form class="">
       <input type="password" name="oldpw" id="oldpw" placeholder="Current Password">
       <input type="password" name="newpw" id="newpw" placeholder="New Password">
-      <button type="button" name="button" onclick="changepw()">Change Password</button>
+      <p><button type="button" name="button" onclick="changepw()">Change Password</button></p>
     </form>
     </div>
    <script type="text/javascript">
