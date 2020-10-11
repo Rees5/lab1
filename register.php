@@ -11,7 +11,7 @@
     <div class="background-wrap">
       <div class="background"></div>
     </div>
-    <form id="accesspanel" enctype="multipart/form-data">
+    <form id="accesspanel" enctype="multipart/form-data" method="post" action="contoller.php">
       <h1 id="litheader">Register</h1>
       <div class="inset">
         <p>
