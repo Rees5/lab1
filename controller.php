@@ -8,17 +8,17 @@
     $event = $_POST['event'];
     if($event == "register"){
         //register
-        $fullName = $_POST['fullName'];
-        $username = $_POST['username'];
+        $user_email = $_POST['email'];
+        $username = $_POST['fname'];
         $password = $_POST['password'];
+        $user_city = $_POST['city'];
         $user = new User($user_name,$user_email,$user_city,$user_image,$user_password);
-        $user->setFullName($fullName);
         echo $user->register($pdo);
     }else {
         //login
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $user = new User($username, $password);
+        $user_email = $_POST['username'];
+        $user_password = $_POST['password'];
+        $user = new User($user_email, $user_password);
         echo $user->login($pdo);
     }
 ?>
