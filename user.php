@@ -2,7 +2,7 @@
   Interface Account {
     public function register ($pdo);
     public function login($pdo);
-    public function changePassword($pdo);
+    public function changePassword($pdo,$user_password,$new_user_password);
     public function logout ($pdo);
   }
 
@@ -17,25 +17,25 @@
     //default constructor
     function __construct($user_email,$user_password)
     {
-       $this->$user_email=$user_email;
-       $this->$user_password=$user_password;
+       $this->user_email=$user_email;
+       $this->user_password=$user_password;
     }
     //setters
     function setCity($user_city){
-      $this->$user_city=$user_city;
+      $this->user_city=$user_city;
     }
     function setName($user_name){
-        $this->$user_name=$user_name;
+        $this->user_name=$user_name;
     }
     function setImage($user_image){
-      $this->$user_image=$user_image;
+      $this->user_image=$user_image;
     }
     public function register ($pdo){
       //hash password
-      $passwordHash = password_hash($this->$user_password,PASSWORD_DEFAULT);
+      $passwordHash = password_hash($this->user_password,PASSWORD_DEFAULT);
       //read image attributes
-        $file_name=$this->$user_image['name'];
-        $file_temp_location=$this->$user_image['tmp_name'];
+        $file_name=$this->user_image['name'];
+        $file_temp_location=$this->user_image['tmp_name'];
         //read file extension
         $file_type=substr($file_name,strpos($file_name,'.'),strlen($file_name));
         $file_path="assets/";

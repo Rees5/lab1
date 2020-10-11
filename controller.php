@@ -9,11 +9,11 @@
     if($event == "register"){
         //register
         $user_email = $_POST['email'];
-        $username = $_POST['fname'];
-        $password = $_POST['password'];
+        $user_name = $_POST['fname'];
+        $user_password = $_POST['password'];
         $user_city = $_POST['city'];
-        $image=$_FILES['photo'];
-        $user = new User(,$user_email, $user_password);
+        $user_image=$_FILES['photo'];
+        $user = new User($user_email, $user_password);
         $user->setImage($user_image);
         $user->setName($user_name);
         $user->setCity($user_city);
