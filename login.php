@@ -14,6 +14,7 @@
     <form id="accesspanel" method="post" action="controller.php">
       <h1 id="litheader">Login</h1>
       <div class="inset">
+        <p><?php if(isset($_SESSION['err'])){ echo $_SESSION['err']; unset($_SESSION['err']);} ?></p>
         <p>
           <input type="text" name="email" id="email" placeholder="Email address">
         </p>

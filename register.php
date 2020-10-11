@@ -14,6 +14,7 @@
     <form id="accesspanel" enctype="multipart/form-data" method="post" action="controller.php">
       <h1 id="litheader">Register</h1>
       <div class="inset">
+        <p><?php if(isset($_SESSION['err'])){ echo $_SESSION['err']; unset($_SESSION['err']);} ?></p>
         <p>
           <input type="text" name="fname" id="fname" placeholder="Name">
         </p>

@@ -10,10 +10,10 @@
     <img src="" id="pic" /><br>
     banner
     <img src="" id="tableBanner" />
-    <p id="fname"></p>
-    <p id="email"></p>
-    <p id="city"></p>
-    <p id="password"></p>
+    <p id="fname">Name: <?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; unset($_SESSION['user_name']);} ?></p>
+    <p id="email">Email: <?php if(isset($_SESSION['user_email'])){ echo $_SESSION['user_email']; unset($_SESSION['user_email']);} ?></p>
+    <p id="city">City: <?php if(isset($_SESSION['user_city'])){ echo $_SESSION['user_city']; unset($_SESSION['user_city']);} ?></p>
+    <p id="password"><?php if(isset($_SESSION['user_password'])){ echo $_SESSION['user_password']; unset($_SESSION['user_password']);} ?></p>
 
     <form class="">
       <input type="password" name="oldpw" id="oldpw" placeholder="Current Password">
@@ -22,7 +22,7 @@
     </form>
     <p><a href="login.html" onclick="confirm('Are you sure you want to logout?')"><button type="button" name="button">Logout</button></a></p>
    <script type="text/javascript">
-    var dataImage = localStorage.getItem('photo');
+  /*  var dataImage = localStorage.getItem('photo');
     var sEmail = localStorage.getItem('email');
     var sPassword = localStorage.getItem('password');
     var sCity = localStorage.getItem('city');
@@ -32,7 +32,7 @@
     document.getElementById('fname').innerHTML="Name: "+sFname;
     document.getElementById('email').innerHTML="Email: "+sEmail;
     document.getElementById('city').innerHTML="City: "+sCity;
-    document.getElementById('password').innerHTML="Password: "+sPassword;
+    document.getElementById('password').innerHTML="Password: "+sPassword;*/
     </script>
 
 

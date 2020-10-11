@@ -45,7 +45,7 @@
             $stmt=$pdo->prepare("INSERT INTO user_table (user_name,user_email,user_city,user_image,user_password)VALUES (?,?,?,?,?)");
             $stmt->execute([$this->user_name,$this->user_email,$this->user_city,$new_name,$passwordHash]);
             $stmt = null;
-            return "Account has been created.";
+            return "success";
           } catch (PDOException $e) {
             return $e->getMessage();
           }
@@ -63,7 +63,7 @@
                 	return "Account does not exist";
                 }
                 if (password_verify($this->user_password,$row['user_password'])){
-                	return "Success";
+                	return "success";
                 }
                 return "Your username or password is not correct";
             } catch (PDOException $e) {

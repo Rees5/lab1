@@ -17,12 +17,28 @@
         $user->setImage($user_image);
         $user->setName($user_name);
         $user->setCity($user_city);
-        echo $user->register($pdo);
-    }else {
+        session_start();
+        if($user->register($pdo)=="success"){
+
+          $_SESSION['err']="Account Created. Fill this form to login";
+          header("location:login.php");
+        } else{
+          $_SESSION['err']="Failed! User exists or details provided are incorrect";
+          header("location:register.php");
+        }
+        }else {
         //login
         $user_email = $_POST['email'];
         $user_password = $_POST['password'];
         $user = new User($user_email, $user_password);
-        echo $user->login($pdo);
+
+        if($user->login($pdo)=="success"){
+          $_SESSION['user_email']=$user_email;
+          $_SESSION['user_password']=$user_password;
+          header("location:index.php");
+        } else {
+          $_SESSION['err']="Invalid credentials";
+          header("location:login.php");
+        }
     }
 ?>
