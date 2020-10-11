@@ -21,14 +21,25 @@
        $this->user_password=$user_password;
     }
     //setters
-    function setCity($user_city){
+    public function setCity($user_city){
       $this->user_city=$user_city;
     }
-    function setName($user_name){
+    public function setName($user_name){
         $this->user_name=$user_name;
     }
-    function setImage($user_image){
+    public function setImage($user_image){
       $this->user_image=$user_image;
+    }
+    //getters
+    public function getUser($pdo,$user_email){
+      try{
+        $stmt = $pdo->prepare("SELECT * FROM user_table WHERE user_email=?");
+        $stmt->execute([$user_email]);
+        $row = $stmt->fetch();
+        $row;
+      } catch (PDOException $e) {
+        return $e->getMessage();
+      }
     }
     public function register ($pdo){
       //hash password

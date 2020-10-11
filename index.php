@@ -1,3 +1,20 @@
+<?php
+   session_start();
+   include_once 'db.php';
+   include_once 'user.php';
+
+   $con = new DBConnector();
+   $pdo = $con->connectToDB();
+   if(isset($_SESSION['user_email'])){
+      //$row=$user->getUser($pdo,$_SESSION['user_email']);
+      $stmt = $pdo->prepare("SELECT * FROM user_table WHERE user_email=?");
+      $stmt->execute([$_SESSION['user_email']]);
+      $row = $stmt->fetch();
+      $_SESSION['user_name']=$row["user_name"];
+      $_SESSION['user_city']=$row['user_city'];
+      $_SESSION['user_image']=$row['user_image'];
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,20 +24,19 @@
     <script type="text/javascript" src="js/scripts.js"></script>
   </head>
   <body>
-    <img src="" id="pic" /><br>
-    banner
-    <img src="" id="tableBanner" />
-    <p id="fname">Name: <?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; unset($_SESSION['user_name']);} ?></p>
-    <p id="email">Email: <?php if(isset($_SESSION['user_email'])){ echo $_SESSION['user_email']; unset($_SESSION['user_email']);} ?></p>
-    <p id="city">City: <?php if(isset($_SESSION['user_city'])){ echo $_SESSION['user_city']; unset($_SESSION['user_city']);} ?></p>
-    <p id="password"><?php if(isset($_SESSION['user_password'])){ echo $_SESSION['user_password']; unset($_SESSION['user_password']);} ?></p>
+    <img width="240px" height="240px" src="assets/<?php echo $_SESSION['user_image']; ?>" id="pic" /><br>
+    <hr>
+    <p id="fname">Name: <?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name'];} ?></p>
+    <p id="email">Email: <?php if(isset($_SESSION['user_email'])){ echo $_SESSION['user_email'];} ?></p>
+    <p id="city">City: <?php if(isset($_SESSION['user_city'])){ echo $_SESSION['user_city'];} ?></p>
+    <p id="password"><?php if(isset($_SESSION['user_password'])){ echo $_SESSION['user_password'];} ?></p>
 
     <form class="">
       <input type="password" name="oldpw" id="oldpw" placeholder="Current Password">
       <input type="password" name="newpw" id="newpw" placeholder="New Password">
       <button type="button" name="button" onclick="changepw()">Change Password</button>
     </form>
-    <p><a href="login.html" onclick="confirm('Are you sure you want to logout?')"><button type="button" name="button">Logout</button></a></p>
+    <p><a href="login.php" onclick="confirm('Are you sure you want to logout?')"><button type="button" name="button">Logout</button></a></p>
    <script type="text/javascript">
   /*  var dataImage = localStorage.getItem('photo');
     var sEmail = localStorage.getItem('email');
@@ -35,7 +51,10 @@
     document.getElementById('password').innerHTML="Password: "+sPassword;*/
     </script>
 
-
+<?php }else {
+  $_SESSION['err']="Session expired. Login again";
+  header("location:login.php");
+} ?>
 
   </body>
 </html>
