@@ -8,8 +8,13 @@
 
   class User implements Account
   {
+    protected $user_name,$user_email,$user_city,$user_image,$user_password;
+    function __construct($user_name,$user_email,$user_city,$user_image,$user_password)
+    {
 
-    function __construct()
+    }
+
+    function __construct($user_name,$user_email,$user_city,$user_image,$user_password)
     {
 
     }
