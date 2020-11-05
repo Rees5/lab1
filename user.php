@@ -74,7 +74,7 @@
                 	return "Account does not exist";
                 }
                 if (password_verify($this->user_password,$row['user_password'])){
-                  session_start();
+                  if(!isset($_SESSION)) {session_start();}
                   $_SESSION['user_id']=$row['user_id'];
                   $_SESSION['user_name']=$row['user_name'];
                 	return "success";

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)) {session_start();}
     include_once 'user.php';
     include_once 'db.php';
 
@@ -20,7 +20,7 @@
         $user->setCity($user_city);
 
         if($user->register($pdo)=="success"){
-          //session_start();
+          //if(!isset($_SESSION)) {session_start();}
           $_SESSION['err']="Account Created. Fill this form to login";
           header("location:login.php");
         } else{
@@ -35,12 +35,12 @@
         $user = new User($user_email, $user_password);
 
         if($user->login($pdo)=="success"){
-          //session_start();
+          //if(!isset($_SESSION)) {session_start();}
           $_SESSION['user_email']=$user_email;
           $_SESSION['user_password']=$user_password;
           header("location:index.php");
         } else {
-          //session_start();
+          //if(!isset($_SESSION)) {session_start();}
           $_SESSION['err']="Invalid credentials";
           header("location:login.php");
         }

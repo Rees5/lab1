@@ -1,4 +1,4 @@
-<?php session_start();
+<?php if(!isset($_SESSION)) {session_start();}
 
 $total_price = 0;
 $total_item = 0; ?>

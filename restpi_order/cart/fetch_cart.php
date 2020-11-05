@@ -2,7 +2,7 @@
 
 //fetch_cart.php
 
-session_start();
+if(!isset($_SESSION)) {session_start();}
 
 $total_price = 0;
 $total_item = 0;

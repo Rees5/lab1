@@ -1,4 +1,4 @@
-<?php include('../config.php');session_start(); ?>
+<?php include('../config.php');if(!isset($_SESSION)) {session_start();} ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

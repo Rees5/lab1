@@ -1,10 +1,11 @@
 <?php
   require_once '../../config.php';
   $link=connect();
-  session_start();
+  if(!isset($_SESSION)) {session_start();}
   date_default_timezone_set('Africa/Nairobi');
-
+echo "dgt1";
   if(isset($_SESSION['shopping_cart'])&&isset($_SESSION['email'])){
+    echo "dgt";
     $mail=$_SESSION['email'];
     //serialize cart
     $cart2 = serialize($_SESSION['shopping_cart']);
@@ -39,6 +40,6 @@
 
   } else{
     echo '<script>alert("No Products in cart!")</script>';
-    header("location:index.php");
+    //header("location:index.php");
   }
   ?>
