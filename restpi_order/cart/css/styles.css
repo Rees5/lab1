@@ -1,0 +1,15 @@
+
+    /* Formatting search box */
+    .search-box input[type="text"]{
+        width: 300px;
+        height: 32px;
+        padding: 5px 10px;
+        border: 1px solid #CCCCCC;
+        font-size: 14px;
+    }
+
+    .search-box input[type="text"]{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Formatting order status */
