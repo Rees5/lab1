@@ -111,7 +111,7 @@ session_start();
 						<span class="sr-only">Menu</span>
 						<span class="glyphicon glyphicon-menu-hamburger"></span>
 						</button>
-						<a class="navbar-brand" href="../">e-Kula</a>
+						<a class="navbar-brand" href="#">e-Kula</a>
 					</div>
 
 					<div id="navbar-cart" class="navbar-collapse navbar-right collapse">
@@ -123,8 +123,8 @@ session_start();
 									<span class="total_price">Ksh. 0.00</span>
 								</a>
 							</li>
-							<li><a>	<?php if (isset($_SESSION['fname'])) {
-									echo 'Logged in as '.$_SESSION["fname"].'';
+							<li><a>	<?php if (isset($_SESSION['user_name'])) {
+									echo 'Logged in as '.$_SESSION["user_name"].'';
 								} else {
 									echo 'Youre not loggen in';
 								}  ?></a></li>
@@ -139,9 +139,9 @@ session_start();
                   <li><a href="#">Setings</a>
                   </li>
                   <li>
-                    <form action="../logout.php">
+                    <form action="../../logout.php">
 											<?php
-											if(isset($_SESSION['email'])){
+											if(isset($_SESSION['user_email'])){
 													?>
 													<button type="button" class="btn btn-link" onclick="functionConfirm('Your cart is not saved. Do you want to save it?', function yes() {
 														 alert('Your cart has been saved! Logging out...');
