@@ -1,6 +1,12 @@
 <?php
-session_unset();
-    session_destroy();
+    if(!isset($_SESSION)) {
+      session_start();
+      session_unset();
+      session_destroy();
+    } else {
+      session_unset();
+      session_destroy();
+    }
     session_start();
     $_SESSION['err']="Logout Successful.";
     ?>
