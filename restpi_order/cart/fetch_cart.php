@@ -24,14 +24,14 @@ if(!empty($_SESSION["shopping_cart"]))
 	{
 		$output .= '
 		<tr>
-			<td>'.$values["food_name"].'</td>
-			<td>'.$values["food_quantity"].'</td>
-			<td align="right">Ksh '.$values["food_price"].'</td>
-			<td align="right">Ksh '.number_format($values["food_quantity"] * $values["food_price"], 2).'</td>
+			<td>'.$values["product_name"].'</td>
+			<td>'.$values["product_quantity"].'</td>
+			<td align="right">Ksh '.$values["product_price"].'</td>
+			<td align="right">Ksh '.number_format($values["product_quantity"] * $values["product_price"], 2).'</td>
 			<td><button name="delete" class="btn btn-danger btn-xs delete" id="'. $values["product_id"].'">Remove</button></td>
 		</tr>
 		';
-		$total_price = $total_price + ($values["food_quantity"] * $values["food_price"]);
+		$total_price = $total_price + ($values["product_quantity"] * $values["product_price"]);
 		$total_item = $total_item + 1;
 	}
 	$output .= '
