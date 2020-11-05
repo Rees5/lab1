@@ -67,7 +67,7 @@
     }
     public function login($pdo){
       try {
-                $stmt = $pdo->prepare("SELECT user_password FROM user_table WHERE user_email=?");
+                $stmt = $pdo->prepare("SELECT * FROM user_table WHERE user_email=?");
                 $stmt->execute([$this->user_email]);
                 $row = $stmt->fetch();
                 if($row == null){

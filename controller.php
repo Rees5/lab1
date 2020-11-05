@@ -37,7 +37,6 @@
         if($user->login($pdo)=="success"){
           //session_start();
           $_SESSION['user_email']=$user_email;
-          $_SESSION['user_id']=$user_id;
           $_SESSION['user_password']=$user_password;
           header("location:index.php");
         } else {

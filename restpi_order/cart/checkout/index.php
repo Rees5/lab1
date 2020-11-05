@@ -141,8 +141,8 @@ $total_item = 0; ?>
         </div>
       </div>
       <div class="col-25">
-        <?php if (isset($_SESSION['fname'])) {
-          echo '<p class="text-right">'.$_SESSION["fname"].'</p>';
+        <?php if (isset($_SESSION['user_name'])) {
+          echo '<p class="text-right">'.$_SESSION["user_name"].'</p>';
         }  ?>
         <div class="container">
           <h4>Order Summary<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>
