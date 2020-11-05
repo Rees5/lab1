@@ -31,7 +31,7 @@ if(isset($_SESSION['user_email'])){
     if(setData($sql)=="success"){
       unset($_SESSION['shopping_cart']);
       unset($_SESSION['stercart']);
-      echo '<script>alert("Order Placed!");location.replace("../myorder_table.php");</script>';
+      echo '<script>alert("Order Placed!");location.replace("../myorders.php");</script>';
 
     } else{
       echo '<script>alert("Failed! '.mysqli_error($link).'");location.replace("index.php");</script>';
