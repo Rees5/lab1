@@ -55,7 +55,7 @@
                     <tbody>
                       <?php  include('../config.php');
 
-                      $query = "SELECT * FROM orders where customer_id='".$_SESSION['user_email']."' ORDER BY order_no DESC";
+                      $query = "SELECT * FROM order_table where customer_id='".$_SESSION['user_email']."' ORDER BY order_no DESC";
 
                       $statement = $connect->prepare($query);
 
