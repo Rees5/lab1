@@ -178,7 +178,7 @@
             if(isset($_GET['q'])){
               include('../config.php');
               date_default_timezone_set('Africa/Nairobi');
-
+              $_SESSION['role']='0';
               if($_SESSION['role']=='1'){
                 $query = "SELECT * FROM order_table where order_no='".$_GET['q']."' ORDER BY order_no DESC";
               } else{
@@ -194,10 +194,10 @@
                 foreach($result as $row)
                 {
 
-                  $cust="select * from customers where email ='".$row['customer_id']."'";
+                  $cust="select * from user_table where user_email ='".$row['customer_id']."'";
                   ?>
                   <header class="card-header"><b> My order_table / Tracking </b><span class="float-right"> <?php foreach (getData($cust) as $dat) {
-                    echo "<b>Order By: </b>".$dat['fname'];
+                    echo "<b>Order By: </b>".$dat['user_name'];
                   } ?></span></header>
 
                   <div class="card-body">
@@ -208,7 +208,7 @@
                   $sby=$row['shippedBy'];
                   $sta=$row['status'];
                   $status=$sta;
-                  if($sta == 'inorder'||$sta=='Placed'){
+                  if($sta == 'ordered'||$sta=='Placed'){
                     $a='';
                   } else if($sta == 'Processed'){
                     $a='1';
@@ -283,7 +283,7 @@
               <?php } ?>
             </ul>
             <hr>
-            <a href="orderpage.php" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to order_table</a>
+            <a href="myorders.php" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to order_table</a>
           <?php }}} ?>
         </div>
     </article>

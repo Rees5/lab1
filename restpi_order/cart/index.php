@@ -131,7 +131,7 @@ if(!isset($_SESSION)) {session_start();}
 								<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Checkout</a>
+                  <li><a href="checkout/">Checkout</a>
                   </li>
                   <li><a href="myorders.php">Order History</a>
                   </li>

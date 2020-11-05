@@ -28,8 +28,9 @@
 
     </nav>
     <div class="container">
-      <a>	<?php if (isset($_SESSION['fname'])) {
-          echo 'Logged in as '.$_SESSION["fname"].'';
+      <a href="index.php">Back </a>
+      <a style="float:right">	<?php if (isset($_SESSION['user_name'])) {
+          echo 'Logged in as '.$_SESSION["user_name"].'';
         } else {
           echo 'Youre not loggen in';
         }  ?></a>

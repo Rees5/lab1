@@ -77,6 +77,14 @@ button:hover, a:hover {
   <body>
     <iframe id="ifplayer" width='640' height='auto' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='restpi_order/cart/index.php'></iframe>
 <script>
+$(document).ready(function() {
+    currentLocation = localStorage.prevUrl || 'yourInitialSrc';
+
+    $('#ifplayer').attr('src', currentLocation);
+    $('#ifplayer').load(function() {
+        localStorage.prevUrl = $(this)[0].contentWindow.location.href;
+    })
+})
 var iframe = document.getElementById("ifplayer");
 
   // Adjusting the iframe height onload event
