@@ -182,7 +182,7 @@
               if($_SESSION['role']=='1'){
                 $query = "SELECT * FROM orders where order_no='".$_GET['q']."' ORDER BY order_no DESC";
               } else{
-                $query = "SELECT * FROM orders where order_no='".$_GET['q']."' and customer_id='".$_SESSION['email']."' ORDER BY order_no DESC";
+                $query = "SELECT * FROM orders where order_no='".$_GET['q']."' and customer_id='".$_SESSION['user_email']."' ORDER BY order_no DESC";
 
               }
               $statement = $connect->prepare($query);

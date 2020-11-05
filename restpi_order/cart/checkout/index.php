@@ -54,6 +54,7 @@ $total_item = 0; ?>
   </head>
 
   <body>
+    <?php if(isset($_SESSION['shopping_cart'])){ ?>
     <div class="container py-5">
       <!-- For demo purpose -->
       <div class="row mb-4">
@@ -154,7 +155,7 @@ $total_item = 0; ?>
               } ?>
         </b></span></h4>
           <?php
-          if(isset($_SESSION['shopping_cart'])){
+
           if(!empty($_SESSION["shopping_cart"]))
           {
           	foreach($_SESSION["shopping_cart"] as $keys => $values)

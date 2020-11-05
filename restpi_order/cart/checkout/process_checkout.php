@@ -4,9 +4,10 @@
   if(!isset($_SESSION)) {session_start();}
   date_default_timezone_set('Africa/Nairobi');
 echo "dgt1";
-  if(isset($_SESSION['shopping_cart'])&&isset($_SESSION['email'])){
+if(isset($_SESSION['user_email'])){
+  if(isset($_SESSION['shopping_cart'])){
     echo "dgt";
-    $mail=$_SESSION['email'];
+    $mail=$_SESSION['user_email'];
     //serialize cart
     $cart2 = serialize($_SESSION['shopping_cart']);
     if(isset($_SESSION['stercart'])){
@@ -41,5 +42,9 @@ echo "dgt1";
   } else{
     echo '<script>alert("No Products in cart!")</script>';
     //header("location:index.php");
+  }
+}
+  else {
+    echo "You are not logged in";
   }
   ?>
