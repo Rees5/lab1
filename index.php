@@ -75,7 +75,15 @@ button:hover, a:hover {
     <script type="text/javascript" src="js/scripts.js"></script>
   </head>
   <body>
-    <iframe id="ifplayer" width='640' height='360' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='restpi_order/cart/index.php'></iframe>
+    <iframe id="ifplayer" width='640' height='auto' marginwidth='0' marginheight='0' scrolling='no' frameborder='0' allowfullscreen='yes' src='restpi_order/cart/index.php'></iframe>
+<script>
+var iframe = document.getElementById("ifplayer");
+
+  // Adjusting the iframe height onload event
+  iframe.onload = function(){
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
 <style>
   #ifplayer {
     width: 100%;
