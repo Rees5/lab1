@@ -39,6 +39,6 @@
 
   } else{
     echo '<script>alert("No Products in cart!")</script>';
-    //header("location:index.php");
+    header("location:index.php");
   }
   ?>
