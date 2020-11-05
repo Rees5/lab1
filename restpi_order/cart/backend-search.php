@@ -33,7 +33,7 @@ if(isset($_REQUEST["term"])){
                 						<div class="flip-card">
                 							<div class="flip-card-inner">
                 								<div class="flip-card-front">
-                									<img height="200" width="100%" src="../assets/'.$row["file_path"].'" class="img-ressponsive" /><br />
+                									<img height="200" width="100%" src="'.$row["file_path"].'" class="img-ressponsive" /><br />
                 								</div>
                 								<div class="flip-card-back">
                 									<h4 class="text-info">'.$row["food_name"].'</h4>
