@@ -9,12 +9,12 @@
   } else{
     echo "Connected Successfully";
   }*/
-  $connect = new PDO("mysql:host=localhost;dbname=food_web", "root", "");
+  $connect = new PDO("mysql:host=localhost;dbname=lab1", "root", "");
   function connect(){
     $server="localhost";
     $uname="root";
     $pwd="";
-    $db="food_web";
+    $db="lab1";
     $link= mysqli_connect($server,$uname,$pwd,$db) or
     die("ERROR: Could not connect. " . mysqli_connect_error());;
     return $link;
